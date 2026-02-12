@@ -1,0 +1,80 @@
+/* Couleur de fond générale */
+body {
+    background-color: #dd749e;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style des boutons */
+button {
+    background-color: #ffb6c1;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    font-size: 16px;
+    margin: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+/* Images centrées proprement (PC + mobile) */
+#amour,
+#ours,
+#etoile {
+    display: block;
+    margin: 20px auto; /* auto = centré horizontalement */
+    width: 150px;
+}
+
+/* Suppression du margin-left fixe qui cassait le mobile */
+#etoile {
+    width: 120px;
+}
+
+/* Carte centrale */
+.centre {
+    text-align: center;
+    font-size: 20px;
+    color: #dd749e;
+
+    /* Largeur flexible au lieu de margin fixe */
+    max-width: 500px;   /* limite sur PC */
+    width: 90%;         /* s’adapte au mobile */
+    margin: 20px auto;  /* centre horizontalement */
+
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 15px;
+    background-color: white;
+}
+
+/* Conteneur flexible */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Adaptation téléphone */
+@media (max-width: 768px) {
+
+    /* Texte plus petit sur téléphone */
+    .centre {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    /* Boutons plus larges pour le tactile */
+    button {
+        width: 80%;
+        max-width: 250px;
+    }
+
+    /* Images légèrement plus petites */
+    #amour,
+    #ours,
+    #etoile {
+        width: 120px;
+    }
+}
