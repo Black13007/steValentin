@@ -29,7 +29,10 @@ ouiBtn.addEventListener("click", () => {
         <p>Tu viens de rendre quelqu’un très heureux 😘</p> 
         <img src="images/amour.png" width="120">
     `;
+    music.play();
 });
+
+
 
 
 
@@ -51,13 +54,24 @@ if (name) {
 
 // 4
 
-const ours = document.getElementById("ours");
-let count = 0;
 
-ours.addEventListener("click", () => {
-    count++;
-    if (count === 5) {
-        alert("Tu as trouvé le secret 💕");
+
+const photoInput = document.getElementById("photo");
+let photoURL = "";
+
+photoInput.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if (file) {
+        photoURL = URL.createObjectURL(file);
     }
 });
+ouiBtn.addEventListener("click", () => {
+    centre.innerHTML = `
+        <h1>💖 Youpiii 💖</h1>
+        <p>Tu viens de rendre quelqu’un très heureux 😘</p>
+        ${photoURL ? `<img src="${photoURL}" class="photo-valentine">` : ""}
+        <img src="images/amour.png" width="120">
+    `;
 
+    document.getElementById("music").play();
+});
